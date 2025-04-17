@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Doto:wght,ROND@700,100&display=swap");
+/* App.css */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background: linear-gradient(
+    to right,
+    black 0%,
+    black 80%,
+    rgb(94, 93, 93) 100%
+  );
+  position: relative;
+  /* overflow: hidden; */
+  font-family: "Doto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings: "ROND" 100;
+}
+
+/* Pseudo-element to place the image behind */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url("../src/assets/brainEffect.svg") center center;
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  z-index: -1;
+  pointer-events: none;
+}
+/* For Webkit-based browsers (Chrome, Safari, Edge, etc.) */
+::-webkit-scrollbar {
+  width: 8px; /* Thinner scrollbar */
+  background-color: #1a1a1a; /* Darker charcoal black scrollbar track (50% darker) */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #cc3700; /* 50% darker orangered scroller */
+  border-radius: 10px; /* Smoother, more modern rounded corners */
+  border: 2px solid #1a1a1a; /* Slight border to make the thumb stand out */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #cc4f1a; /* Darker orangered scroller on hover */
+}
+
+/* For Firefox */
+scrollbar {
+  width: 8px;
+  background-color: #1a1a1a; /* Darker charcoal black scrollbar track (50% darker) */
+}
+
+scrollbar-thumb {
+  background-color: #cc3700; /* 50% darker orangered scroller */
+  border-radius: 10px; /* Smoother, more modern rounded corners */
+  border: 2px solid #1a1a1a; /* Slight border to make the thumb stand out */
+}
+
+scrollbar-thumb:hover {
+  background-color: #cc4f1a; /* Darker orangered scroller on hover */
+}
