@@ -10,6 +10,8 @@ body {
     black 80%,
     rgb(94, 93, 93) 100%
   );
+  /* background: white; */
+
   position: relative;
   /* overflow: hidden; */
   font-family: "Doto", sans-serif;
