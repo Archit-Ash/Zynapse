@@ -66,3 +66,6 @@ scrollbar-thumb {
 scrollbar-thumb:hover {
   background-color: #cc4f1a; /* Darker orangered scroller on hover */
 }
+pre {
+  color: white;
+}

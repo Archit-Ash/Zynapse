@@ -1,0 +1,207 @@
+{
+  "questions": [
+    {
+      "question": "Do you experience headaches regularly?",
+      "name": "headaches",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Are your headaches more intense in the morning?",
+      "name": "headaches_morning",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do your headaches worsen when coughing, sneezing, or straining?",
+      "name": "headaches_worsen_coughing",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you noticed any persistent nausea or vomiting without another known cause?",
+      "name": "nausea_vomiting",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you feel unusually fatigued during the day?",
+      "name": "fatigue",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced any confusion or memory problems recently?",
+      "name": "confusion_memory_problems",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have trouble following simple instructions?",
+      "name": "trouble_following_instructions",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you noticed any personality or behavior changes?",
+      "name": "personality_behavior_changes",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have difficulty speaking or understanding others?",
+      "name": "difficulty_speaking_understanding",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced dizziness or a sensation that the world is spinning (vertigo)?",
+      "name": "dizziness_vertigo",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you experience frequent mood swings or emotional changes?",
+      "name": "mood_swings",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced blurry or double vision?",
+      "name": "blurry_double_vision",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you lost peripheral (side) vision?",
+      "name": "lost_peripheral_vision",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have difficulty focusing your eyes or eye pain?",
+      "name": "difficulty_focusing_eye_pain",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you had recent hearing loss or hearing strange sounds (like ringing)?",
+      "name": "hearing_loss_ringing",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you lost movement or feeling in any arm or leg?",
+      "name": "lost_movement_feeling",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Are you experiencing difficulty with balance or frequent falls?",
+      "name": "balance_falls",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you notice muscle weakness or stiffness?",
+      "name": "muscle_weakness_stiffness",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you had any trouble swallowing?",
+      "name": "trouble_swallowing",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced any seizures?",
+      "name": "experienced_seizures",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you ever had convulsions or lost consciousness?",
+      "name": "convulsions_lost_consciousness",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you ever felt absent, spaced out, or disconnected from reality?",
+      "name": "felt_absent_spaced_out",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you frequently experience déjà vu or jamais vu?",
+      "name": "deja_vu_jamais_vu",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you had hallucinations, visual distortions, or unusual smells/tastes?",
+      "name": "hallucinations_visual_distortions",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have repetitive body movements during these episodes?",
+      "name": "repetitive_body_movements",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced any odd sensations like numbness, tingling, or a rising feeling in your stomach?",
+      "name": "odd_sensations_numbness",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "What is your age?",
+      "name": "age",
+      "type": "number"
+    },
+    {
+      "question": "What is your sex assigned at birth?",
+      "name": "sex_assigned_at_birth",
+      "type": "select",
+      "options": ["Male", "Female", "Other"]
+    },
+    {
+      "question": "Do you have a family history of brain tumors or neurological conditions?",
+      "name": "family_history_neurological_conditions",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you experienced any recent head injuries?",
+      "name": "recent_head_injuries",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have a history of seizures or epilepsy?",
+      "name": "history_seizures_epilepsy",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Have you previously undergone brain imaging such as an MRI or CT scan?",
+      "name": "previous_brain_imaging",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Do you have a pacemaker or any metal implants (important for MRI compatibility)?",
+      "name": "pacemaker_metal_implants",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    },
+    {
+      "question": "Are you pregnant or possibly pregnant?",
+      "name": "pregnant_possibly_pregnant",
+      "options": ["yes", "no"],
+      "type": "boolean"
+    }
+  ]
+}
