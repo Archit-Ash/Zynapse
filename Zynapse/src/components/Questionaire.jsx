@@ -100,7 +100,7 @@ const Questionaire = () => {
                 name="headaches"
                 value="yes"
                 onChange={handleChange}
-              />{" "}
+              />
               Yes
             </p>
             <p className="optionContainer">

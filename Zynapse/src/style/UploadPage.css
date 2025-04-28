@@ -137,3 +137,30 @@
   max-height: 100%;
   object-fit: contain;
 }
+.uploadFormContainer {
+  margin: 1.5rem;
+  padding: 1.5rem;
+  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  height: auto;
+  border: 1px solid orangered;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(10px);
+}
+.formLabel {
+  color: white;
+  display: block;
+  margin: 1.5rem;
+  font-size: 2rem;
+}
+.formValues {
+  all: unset;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 98%;
+  border: 1px dashed orangered;
+  border-radius: 1.5rem;
+
+  background-color: black;
+  color: white;
+}

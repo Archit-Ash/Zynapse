@@ -7,14 +7,27 @@ const QuestionResult = () => {
   const [data, setData] = useState(null); // State to store the API response
   const [loading, setLoading] = useState(false); // State to handle loading state
 
-  const prompt = `Please review the following symptoms and recommend if an MRI scan is necessary based on the data provided: 
-  ${Object.entries(formData)
-    .map(
-      ([key, value]) =>
-        `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
-    )
-    .join("\n")}
-  **Important:** Only recommend an MRI scan if the combination of symptoms strongly suggests a need for further medical evaluation. Please ensure the advice is cautious and based on established medical criteria, and avoid creating unnecessary panic.,Reply Either with "MRI is Required ,possibility of a Brain Tumor" or "NO MRI NEEDED ,youre healthy", you can also give a small recommendation and disclaimer in next line,MAKE THE DISCLAIMER VERY CLEAR TO REMOVE ANY LIABILITY`;
+  const prompt = `Please review the following symptoms and determine the recommendation **based solely on the number of "yes" responses** provided:
+
+${Object.entries(formData)
+  .map(
+    ([key, value]) => `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
+  )
+  .join("\n")}
+
+Rules:
+- If number of "yes" responses is **15 or more**, reply exactly with:  
+  "MRI is Required ,possibility of a Brain Tumor"
+- If number of "yes" responses is **between 7 and 15**, reply exactly with:  
+  "CANNOT SAY DEFINITIVELY ,consult a doctor for further evaluation"
+- If number of "yes" responses is **7 or fewer**, reply exactly with:  
+  "NO MRI NEEDED ,youre healthy"
+
+After that, give a one-line general recommendation, and a VERY CLEAR DISCLAIMER to remove any liability.
+
+**Important:** Do not recommend an MRI unless absolutely necessary. This is a sensitive case and the response must avoid creating unnecessary panic.
+DONT reply with Number of yes
+`;
 
   const sendToGemini = async () => {
     setLoading(true); // Start loading
