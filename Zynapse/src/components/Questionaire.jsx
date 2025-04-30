@@ -806,7 +806,10 @@ const Questionaire = () => {
             </p>
           </div>
           <div>
-            <button onClick={alertUser}> Submit</button>
+            <button id="btnhomepage" onClick={alertUser}>
+              {" "}
+              Submit
+            </button>
           </div>
         </StepWizard>
       </form>

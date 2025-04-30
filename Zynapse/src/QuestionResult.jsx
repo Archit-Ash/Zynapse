@@ -1,36 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import "./style/questionresult.css";
 
 const QuestionResult = () => {
   const location = useLocation();
   const { formData } = location.state || {};
-  const [data, setData] = useState(null); // State to store the API response
-  const [loading, setLoading] = useState(false); // State to handle loading state
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-  const prompt = `Please review the following symptoms and determine the recommendation **based solely on the number of "yes" responses** provided:
+  const prompt = `You are a medical assistant AI designed to provide **general recommendations** based on user-submitted symptom data. Carefully analyze the provided inputs, including severity and user age, to determine whether an MRI might be advisable.
 
-${Object.entries(formData)
-  .map(
-    ([key, value]) => `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
-  )
-  .join("\n")}
+  Inputs:
+  ${Object.entries(formData)
+    .map(
+      ([key, value]) =>
+        `${key.charAt(0).toUpperCase() + key.slice(1)}: ${value}`
+    )
+    .join("\n")}
 
-Rules:
-- If number of "yes" responses is **15 or more**, reply exactly with:  
-  "MRI is Required ,possibility of a Brain Tumor"
-- If number of "yes" responses is **between 7 and 15**, reply exactly with:  
-  "CANNOT SAY DEFINITIVELY ,consult a doctor for further evaluation"
-- If number of "yes" responses is **7 or fewer**, reply exactly with:  
-  "NO MRI NEEDED ,youre healthy"
 
-After that, give a one-line general recommendation, and a VERY CLEAR DISCLAIMER to remove any liability.
-
-**Important:** Do not recommend an MRI unless absolutely necessary. This is a sensitive case and the response must avoid creating unnecessary panic.
-DONT reply with Number of yes
-`;
+  Rules:
+  1. Evaluate **not just the count of "yes" symptoms**, but also their **medical severity**. Symptoms like seizures, loss of consciousness, or persistent vomiting may carry more weight than mild symptoms like fatigue.
+  2. Consider the patient's **age** – younger or older individuals may require more caution even with fewer symptoms.
+  3. NEVER mention a count of symptoms in your reply.
+  4. Provide **one of the following exact diagnosis lines**, based on overall risk:
+     - "MRI is Required ,Please Consult a doctor"
+     - "CANNOT SAY DEFINITIVELY ,consult a doctor for further evaluation"
+     - "NO MRI NEEDED ,you’re healthy"
+  
+  5. After the diagnosis line (above), add:
+     - A short one-line general recommendation (e.g., "Stay alert to any new symptoms and maintain a healthy routine.")
+     - A very CLEAR DISCLAIMER about not being a replacement for a doctor.
+  6. The first line of your response should be your one line diagnosis
+  **Important**: You are not a doctor. Do NOT make direct medical decisions. Be conservative in your suggestions and always guide users to consult professionals.
+  `;
 
   const sendToGemini = async () => {
-    setLoading(true); // Start loading
+    setLoading(true);
     const apiKey = import.meta.env.VITE_REACT_APP_GEMINI_API;
     const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
@@ -58,9 +64,8 @@ DONT reply with Number of yes
       const responseData = await response.json();
       console.log("Gemini API Response:", responseData);
 
-      // Handle response and ensure it's valid
-      if (responseData) {
-        setData(responseData.candidates[0].content.parts[0].text); // Update state with response data
+      if (responseData?.candidates?.[0]?.content?.parts?.[0]?.text) {
+        setData(responseData.candidates[0].content.parts[0].text);
       } else {
         setData("No valid response from Gemini AI.");
       }
@@ -68,18 +73,36 @@ DONT reply with Number of yes
       console.error("Error sending request to Gemini AI:", error);
       setData("An error occurred while fetching the response.");
     } finally {
-      setLoading(false); // Stop loading after the response
+      setLoading(false);
     }
   };
 
-  return (
-    <div>
-      <button onClick={sendToGemini}>Get MRI Recommendation</button>
+  useEffect(() => {
+    sendToGemini();
+  }, []);
 
+  const formatText = (text) => {
+    const lines = text.split("\n");
+
+    return {
+      diagnosis: lines[0]?.trim(),
+      recommendation: lines[1]?.trim(),
+      disclaimer: lines[2]?.trim(),
+    };
+  };
+
+  return (
+    <div className="resultContainer">
       {loading ? (
-        <pre>Loading...</pre> // Show loading while the request is pending
+        <pre>Loading...</pre>
+      ) : data ? (
+        <div className="resultConainer">
+          <div id="diagnosis">{formatText(data).diagnosis}</div>
+          <div id="recommendation">{formatText(data).recommendation}</div>
+          <div id="disclaimer">{formatText(data).disclaimer}</div>
+        </div>
       ) : (
-        <pre>{data}</pre> // Display the data when available
+        <button onClick={sendToGemini}>Refresh</button>
       )}
     </div>
   );

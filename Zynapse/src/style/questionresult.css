@@ -1,0 +1,24 @@
+.resultConainer {
+  margin: 1.5rem;
+  padding: 1rem;
+  border: 0.5px solid orangered;
+
+  border-radius: 1.5rem;
+  backdrop-filter: blur(5px);
+  text-align: center;
+}
+#diagnosis {
+  font-size: 4rem;
+  color: white;
+  margin: 2rem;
+}
+#recommendation {
+  font-size: 1rem;
+  color: grey;
+  margin: 1rem;
+}
+#disclaimer {
+  color: red;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
