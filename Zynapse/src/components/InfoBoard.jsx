@@ -10,23 +10,23 @@ const InfoBoard = () => {
         <div>
           <p id="infotext">Welcome To Zynapse</p>
           <p id="infosubtext">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolor
-            expedita, blanditiis illum fugiat commodi exercitationem aut libero
-            laboriosam. Iusto quos soluta qui delectus ullam inventore
-            necessitatibus voluptates, sunt vitae quis?Lorem ipsum dolor sit
-            amet consectetur adipisicing elit. Accusantium repellendus non
-            quaerat ea libero. Debitis, maxime dolorem nisi fugiat in quas, est
-            quo voluptates quis ab nostrum velit laboriosam hic?Lorem ipsum
-            dolor sit amet consectetur adipisicing elit. Deserunt est aliquam
-            sapiente possimus reprehenderit atque consectetur veritatis. Quia
-            debitis, reprehenderit totam placeat ab nihil eos nesciunt excepturi
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos modi
-            eum hic adipisci impedit, soluta, magni iste omnis aperiam numquam
-            perspiciatis repellat expedita. Veritatis earum voluptatem eos
-            repellendus, atque quasi? Lorem ipsum dolor, sit amet consectetur
-            adipisicing elit. Nostrum consequuntur quas aliquid, vitae debitis
-            necessitatibus fugit, officia fuga doloremque tempora enim minus
-            eveniet provident aut est asperiores,
+            The early detection of brain tumors is crucial for improving patient
+            outcomes and ensuring timely treatment. Traditional diagnostic
+            methods, while effective, often rely on the manual interpretation of
+            MRI scans, which can be both time-consuming and susceptible to human
+            error. Machine learning (ML) models bring a revolutionary
+            advancement to this process by automating the analysis of medical
+            images. These models are trained on extensive datasets, learning to
+            recognize complex patterns and anomalies in MRI scans that may be
+            difficult for the human eye to detect. By continuously improving
+            through exposure to more data, the ML model becomes increasingly
+            accurate and efficient in identifying potential tumors. This level
+            of precision not only speeds up the diagnosis but also empowers
+            healthcare professionals to make more informed decisions, enabling
+            early intervention and ultimately improving patient prognosis. The
+            integration of ML in brain tumor detection represents a critical
+            step toward modernizing healthcare, making it faster, more reliable,
+            and accessible.
           </p>
 
           <div id="btncontainer">

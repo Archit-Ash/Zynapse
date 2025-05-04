@@ -21,11 +21,12 @@ const Navbar = () => {
           </div>
         </Link>
         <div id="pagename">{pageName}</div>
-        <Link to="/question">
+        {/* <Link to="/question">
           <div>
             <img id="logoNavbar" src={logoZynapse} />
           </div>
-        </Link>
+        </Link> */}
+        <div></div>
       </div>
     </>
   );

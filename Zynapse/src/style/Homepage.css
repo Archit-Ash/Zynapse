@@ -111,3 +111,38 @@
   justify-content: center;
   align-items: center;
 }
+#quesConatiner {
+  border: 1px solid orangered;
+  margin: 1.5rem;
+  backdrop-filter: blur(5px);
+  border-radius: 1.5rem;
+}
+#flexQuesContainer {
+  display: flex;
+  text-align: left;
+  justify-content: space-between;
+}
+
+#notes {
+  padding: 1.5rem;
+  margin: 2rem;
+  height: 25rem;
+}
+#rightQUesContainer {
+  flex: 1;
+}
+#quesTitle {
+  color: orangered;
+  font-size: 3rem;
+}
+#iconinfo {
+  width: 3rem;
+  height: 3rem;
+}
+ul {
+  text-decoration: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+  margin: 3rem;
+}

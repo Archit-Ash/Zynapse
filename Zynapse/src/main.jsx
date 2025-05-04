@@ -10,6 +10,7 @@ import Result from "./Result";
 
 import Questionaire from "./components/Questionaire";
 import QuestionResult from "./QuestionResult";
+import Footer from "./components/footer";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById("root")).render(
         <Route path="/question" element={<Questionaire />} />
         <Route path="/questionResult" element={<QuestionResult />} />
       </Routes>
+      <Footer />
     </BrowserRouter>
   </StrictMode>
 );

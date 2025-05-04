@@ -1,0 +1,24 @@
+.flexResultContainer {
+  display: flex;
+  border: 1px solid orangered;
+  margin: 1.5rem;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(5px);
+}
+#uploadedImage {
+  margin: 1.5rem;
+  height: 30rem;
+}
+.green {
+  color: green;
+}
+.resultTitle {
+  font-size: 4rem;
+}
+.confidence {
+  color: white;
+  font-size: 2rem;
+}
+.red {
+  color: red;
+}

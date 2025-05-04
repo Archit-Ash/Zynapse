@@ -19,6 +19,7 @@ body {
   font-weight: 700;
   font-style: normal;
   font-variation-settings: "ROND" 100;
+  user-select: none;
 }
 
 /* Pseudo-element to place the image behind */
