@@ -13,6 +13,7 @@
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.8.1",
     "cropperjs": "^2.0.0",
+    "firebase": "^11.6.1",
     "react": "^19.0.0",
     "react-advanced-cropper": "^0.20.1",
     "react-cropper": "^2.3.3",
