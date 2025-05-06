@@ -1,0 +1,89 @@
+#firebaseFormContainer {
+  margin: 1.5rem;
+  padding: 1.5rem;
+  border: 0.5px solid orangered;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the form vertically */
+}
+
+#firebaseFormContainer > form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the form elements horizontally */
+  gap: 1rem; /* Add spacing between form fields */
+  width: 100%; /* Ensure form takes full width for proper alignment */
+  max-width: 400px; /* Optional: Set max width for form */
+}
+
+#btnhomepage {
+  --accent: orangered;
+  margin: 1px 1px 1px 1px;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--accent);
+  backdrop-filter: blur(5px);
+  background: linear-gradient(
+    to right,
+    rgba(255, 69, 0, 0.1) 1%,
+    transparent 40%,
+    transparent 60%,
+    rgba(255, 69, 0, 0.1) 100%
+  );
+  color: var(--accent);
+  box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.4),
+    0 0 9px 3px rgba(255, 69, 0, 0.1);
+  margin: 2rem;
+}
+
+#btnhomepage:hover {
+  color: #ff9c7e;
+  box-shadow: inset 0 0 10px rgba(255, 69, 0, 0.6),
+    0 0 9px 3px rgba(255, 69, 0, 0.2);
+}
+
+#btnhomepage::before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform 0.4s ease-in-out;
+  background: linear-gradient(
+    to right,
+    transparent 1%,
+    rgba(255, 69, 0, 0.1) 40%,
+    rgba(255, 69, 0, 0.1) 60%,
+    transparent 100%
+  );
+}
+
+#btnhomepage:hover::before {
+  transform: translateX(15em);
+}
+
+.break {
+  display: block;
+  width: 100%; /* Ensure buttons take full width of their container */
+  text-align: center; /* Center button text */
+}
+#firebaseFormContainer > form > input {
+  margin: 1.5rem;
+  padding: 1rem;
+  border: 0.5px solid orangered;
+  background-color: transparent;
+  color: orangered;
+  border-radius: 1.5rem;
+  backdrop-filter: blur(5px);
+  width: 100%;
+}

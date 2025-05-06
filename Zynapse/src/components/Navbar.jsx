@@ -7,6 +7,8 @@ import { useAuth } from "../../authContext"; // ✅ Corrected path
 const pageNames = {
   "/": "Home",
   "/upload": "Image Upload",
+  "/login": "Login",
+  "/signup": "Sign Up",
 };
 
 const Navbar = () => {
