@@ -4,6 +4,7 @@ import { Cropper } from "react-advanced-cropper";
 import "react-advanced-cropper/dist/style.css";
 import "./style/UploadPage.css";
 import uploadIcon from "./assets/uploadicon.png";
+import axios from "axios";
 
 const UploadPage = () => {
   const [image, setImage] = useState(null);
@@ -44,8 +45,9 @@ const UploadPage = () => {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+  
     if (
       !formData.name.trim() ||
       !formData.phone.trim() ||
@@ -56,25 +58,52 @@ const UploadPage = () => {
       setTimeout(() => setShowToast(false), 3000);
       return;
     }
-
+  
     if (!image) {
       setShowToast(true);
       setTimeout(() => setShowToast(false), 3000);
       return;
     }
-
+  
     if (cropperRef.current) {
       const canvas = cropperRef.current.getCanvas();
-      canvas.toBlob((blob) => {
+      canvas.toBlob(async (blob) => {
         const croppedFile = new File([blob], "cropped-image.png", {
           type: "image/png",
         });
-        navigate("/result", {
-          state: { image: croppedFile, formData: formData },
-        });
-      });
+  
+        const data = new FormData();
+        data.append("image", croppedFile);
+        data.append("name", formData.name);
+        data.append("phone", formData.phone);
+        data.append("blood_group", formData.blood_group);
+        data.append("age", formData.age);
+        console.log("Form Data:", data);
+  
+        try {
+          const response = await axios.post("http://localhost:8000/upload/", data, {
+            headers: {
+              "Content-Type": "multipart/form-data",
+            },
+          });
+  
+          console.log("Server Response:", response.data);
+  
+          navigate("/result", {
+            state: {
+              cloudinary_url: response.data.cloudinary_url,
+              prediction: response.data.prediction,
+              confidence: response.data.confidence,
+            },
+          });
+  
+        } catch (err) {
+          console.error("Upload failed:", err);
+        }
+      }, "image/png");
     }
   };
+  
 
   const handleReset = () => {
     setImage(null);
