@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAuth } from "../authContext";
 import { useNavigate } from "react-router-dom";
-
+import "./style/logsign.css";
 const Login = () => {
   const { login } = useAuth();
   const [email, setEmail] = useState("");
@@ -19,26 +19,34 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        onChange={(e) => setEmail(e.target.value)}
-        required
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-        required
-      />
-      <button type="submit">Login</button>
+    <div id="firebaseFormContainer">
+      <form onSubmit={handleSubmit}>
+        <input
+          type="email"
+          placeholder="Email"
+          onChange={(e) => setEmail(e.target.value)}
+          required
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+          required
+        />
+        <button id="btnhomepage" className="break" type="submit">
+          Login
+        </button>
 
-      {/* ➕ Sign Up Button */}
-      <button type="button" onClick={() => navigate("/signup")}>
-        Don't have an account? Sign Up
-      </button>
-    </form>
+        <button
+          id="btnhomepage"
+          className="break"
+          type="button"
+          onClick={() => navigate("/signup")}
+        >
+          Don't have an account? Sign Up
+        </button>
+      </form>
+    </div>
   );
 };
 
