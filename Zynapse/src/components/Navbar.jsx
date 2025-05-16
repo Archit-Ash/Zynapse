@@ -9,6 +9,11 @@ const pageNames = {
   "/upload": "Image Upload",
   "/login": "Login",
   "/signup": "Sign Up",
+  "/knowmore": "Know More",
+  "/privacy": "Privacy Policy",
+  "/about": "About Us",
+  "/terms": "T&C",
+  "/disclaimer": "Disclaimer",
 };
 
 const Navbar = () => {

@@ -1,6 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "./style/result.css";
+import { Link } from "react-router-dom";
 
 const Result = () => {
   const location = useLocation();
@@ -20,9 +21,13 @@ const Result = () => {
       returnResult = (
         <>
           <div className="resultTitle green">✅ No Tumor Detected</div>
-          <div className="confidence">Confidence Rate: {(confidence * 100).toFixed(2)}%</div>
+          <div className="confidence">
+            Confidence Rate: {(confidence * 100).toFixed(2)}%
+          </div>
           <p>Your scan shows no signs of a tumor. This is excellent news!</p>
-          <p>Continue with regular checkups and stay proactive about your health.</p>
+          <p>
+            Continue with regular checkups and stay proactive about your health.
+          </p>
         </>
       );
       break;
@@ -31,7 +36,9 @@ const Result = () => {
       returnResult = (
         <>
           <div className="resultTitle red">⚠ Meningioma Detected</div>
-          <div className="confidence">Confidence Rate: {(confidence * 100).toFixed(2)}%</div>
+          <div className="confidence">
+            Confidence Rate: {(confidence * 100).toFixed(2)}%
+          </div>
           <p>Meningiomas arise from the meninges and are usually benign.</p>
           <p>Consult a specialist to evaluate and track the tumor.</p>
         </>
@@ -42,7 +49,9 @@ const Result = () => {
       returnResult = (
         <>
           <div className="resultTitle red">⚠ Glioma Detected</div>
-          <div className="confidence">Confidence Rate: {(confidence * 100).toFixed(2)}%</div>
+          <div className="confidence">
+            Confidence Rate: {(confidence * 100).toFixed(2)}%
+          </div>
           <p>Gliomas arise from glial cells. Treatment varies by severity.</p>
           <p>Follow up with a neurologist or oncologist for care.</p>
         </>
@@ -53,9 +62,13 @@ const Result = () => {
       returnResult = (
         <>
           <div className="resultTitle red">⚠ Pituitary Tumor Detected</div>
-          <div className="confidence">Confidence Rate: {(confidence * 100).toFixed(2)}%</div>
+          <div className="confidence">
+            Confidence Rate: {(confidence * 100).toFixed(2)}%
+          </div>
           <p>Pituitary tumors can disrupt hormones and cause symptoms.</p>
-          <p>Consult an endocrinologist or neurosurgeon for treatment advice.</p>
+          <p>
+            Consult an endocrinologist or neurosurgeon for treatment advice.
+          </p>
         </>
       );
       break;
@@ -64,7 +77,9 @@ const Result = () => {
       returnResult = (
         <>
           <div className="resultTitle">Unknown Result</div>
-          <p>We're unable to determine the diagnosis. Please re-upload the image.</p>
+          <p>
+            We're unable to determine the diagnosis. Please re-upload the image.
+          </p>
         </>
       );
   }
@@ -73,6 +88,9 @@ const Result = () => {
     <div className="flexResultContainer">
       <img id="uploadedImage" src={imageUrl} alt="Uploaded MRI" />
       <div>{returnResult}</div>
+      <Link to="/knowmore">
+        <button className="btnhomepage"> </button>
+      </Link>
     </div>
   );
 };

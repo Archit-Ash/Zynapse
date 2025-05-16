@@ -22,16 +22,16 @@ const Footer = () => {
         <Link className="ContactLinks" to="/">
           HOME
         </Link>{" "}
-        <Link className="ContactLinks" to="/">
+        <Link className="ContactLinks" to="/about">
           ABOUT
         </Link>{" "}
-        <Link className="ContactLinks" to="/">
+        <Link className="ContactLinks" to="/disclaimer">
           DISCLAIMER
         </Link>{" "}
-        <Link className="ContactLinks" to="/">
+        <Link className="ContactLinks" to="/terms">
           TERMS
         </Link>{" "}
-        <Link className="ContactLinks" to="/">
+        <Link className="ContactLinks" to="/privacy">
           PRIVACY-POLICY
         </Link>{" "}
       </div>

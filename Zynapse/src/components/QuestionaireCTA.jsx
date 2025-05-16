@@ -38,6 +38,9 @@ const QuestionaireCTA = () => {
             <Link to="/question">
               <button id="btnhomepage">Take Questionnaire!</button>
             </Link>
+            <Link to="/knowmore">
+              <button id="btnhomepage">Kow More</button>
+            </Link>
           </div>
         </div>
       </div>

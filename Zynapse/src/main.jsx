@@ -15,6 +15,11 @@ import Signup from "./signUp";
 import Login from "./login";
 import { AuthProvider } from "../authContext";
 import ProtectedRoute from "./components/protectedRoutes";
+import KnowMore from "./KnowMore";
+import PrivacyPolicy from "./privacy";
+import About from "./About";
+import Disclaimer from "./Disclaimer";
+import TermsAndConditions from "./terms";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
@@ -26,7 +31,6 @@ createRoot(document.getElementById("root")).render(
           {/* Public Routes */}
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
-
           {/* Protected Routes */}
           <Route
             path="/"
@@ -65,6 +69,46 @@ createRoot(document.getElementById("root")).render(
             element={
               <ProtectedRoute>
                 <QuestionResult />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/knowmore"
+            element={
+              <ProtectedRoute>
+                <KnowMore />
+              </ProtectedRoute>
+            }
+          />{" "}
+          <Route
+            path="/privacy"
+            element={
+              <ProtectedRoute>
+                <PrivacyPolicy />
+              </ProtectedRoute>
+            }
+          />{" "}
+          <Route
+            path="/about"
+            element={
+              <ProtectedRoute>
+                <About />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/disclaimer"
+            element={
+              <ProtectedRoute>
+                <Disclaimer />
+              </ProtectedRoute>
+            }
+          />{" "}
+          <Route
+            path="/terms"
+            element={
+              <ProtectedRoute>
+                <TermsAndConditions />
               </ProtectedRoute>
             }
           />
