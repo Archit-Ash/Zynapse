@@ -8,7 +8,7 @@ const InfoBoard = () => {
     <div id="infocontainer">
       <div id="infoBoard">
         <div>
-          <p id="infotext">Welcome To Zynapse</p>
+          <p id="infotext">Brain Tumor Classifier</p>
           <p id="infosubtext">
             The early detection of brain tumors is crucial for improving patient
             outcomes and ensuring timely treatment. Traditional diagnostic

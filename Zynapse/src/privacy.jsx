@@ -9,10 +9,9 @@ const PrivacyPolicy = () => {
           <div>
             <p className="infotext">Privacy Policy</p>
             <p className="infosubtext">
-              At Zynapse, your privacy is of utmost importance to us. This
-              Privacy Policy outlines how we collect, use, and protect your
-              personal information when you use our brain tumor detection
-              platform.
+              your privacy is of utmost importance to us. This Privacy Policy
+              outlines how we collect, use, and protect your personal
+              information when you use our brain tumor detection platform.
             </p>
             <p className="infosubtext">
               <strong>Information Collection:</strong> We collect personal
